@@ -1,0 +1,38 @@
+# Language detection for GitHub linguist
+# Rust
+*.rs linguist-language=Rust
+
+# JavaScript
+*.js linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+
+# Markdown
+*.md linguist-language=Markdown
+
+# YAML
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+
+# TOML
+*.toml linguist-language=TOML
+
+# JSON
+*.json linguist-language=JSON
+
+# Shell
+*.sh linguist-language=Shell
+
+# PowerShell
+*.ps1 linguist-language=PowerShell
+
+# Docker
+Dockerfile linguist-language=Docker
+
+# Ignore common non-essential files from language statistics
+.github/ linguist-vendored=false
+.devcontainer/ linguist-vendored=false
+docs/ linguist-vendored=false
+.editorconfig linguist-vendored
+.dockerignore linguist-vendored
+deny.toml linguist-vendored
