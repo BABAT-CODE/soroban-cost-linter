@@ -28,7 +28,7 @@ jobs:
         if: runner.os == 'Windows'
         run: .\.github\scripts\validate-toolchain-pins.ps1
       - name: Install Rust
-        uses: dtolnay/rust-toolchain@6c977a6ca4077a0ceb28ffbe03f59d46e9ac8772 # v1
+        uses: dtolnay/rust-toolchain@02cb101ec7c40f2c49e1d9714d64511d8e1b74de # v1
         with:
           toolchain: nightly-2026-04-16
           components: rustc-dev, llvm-tools-preview, rustfmt, clippy
@@ -97,7 +97,7 @@ jobs:
       - name: Validate toolchain pins (Linux)
         run: bash .github/scripts/validate-toolchain-pins.sh
       - name: Install Rust
-        uses: dtolnay/rust-toolchain@6c977a6ca4077a0ceb28ffbe03f59d46e9ac8772 # v1
+        uses: dtolnay/rust-toolchain@02cb101ec7c40f2c49e1d9714d64511d8e1b74de # v1
         with:
           toolchain: nightly-2026-04-16
           components: rustc-dev, llvm-tools-preview, rustfmt, clippy
@@ -120,7 +120,7 @@ jobs:
           echo '```' >> $GITHUB_STEP_SUMMARY
           cargo llvm-cov --package cargo-cost-lint --bins --test integration --lcov --output-path lcov.info
       - name: Upload LCOV Report Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: lcov-report
           path: lcov.info
@@ -133,7 +133,7 @@ jobs:
       - name: Validate toolchain pins (Linux)
         run: bash .github/scripts/validate-toolchain-pins.sh
       - name: Install Rust
-        uses: dtolnay/rust-toolchain@6c977a6ca4077a0ceb28ffbe03f59d46e9ac8772 # v1
+        uses: dtolnay/rust-toolchain@02cb101ec7c40f2c49e1d9714d64511d8e1b74de # v1
         with:
           toolchain: nightly-2026-04-16
           components: rustc-dev, llvm-tools-preview, rustfmt, clippy
