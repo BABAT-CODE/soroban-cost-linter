@@ -80,7 +80,7 @@ jobs:
 
       - name: Install Rust
         if: steps.bump.outputs.changed == 'true'
-        uses: dtolnay/rust-toolchain@6c977a6ca4077a0ceb28ffbe03f59d46e9ac8772 # v1
+        uses: dtolnay/rust-toolchain@02cb101ec7c40f2c49e1d9714d64511d8e1b74de # v1
         with:
           toolchain: ${{ steps.bump.outputs.target }}
           components: rustc-dev, llvm-tools-preview, rustfmt, clippy
@@ -112,7 +112,7 @@ jobs:
 
       - name: Open or update the bump PR
         if: steps.bump.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: ci/nightly-bump
